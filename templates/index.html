@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Hot or Not</title>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ image }}" alt="Image" width="252" height="252">
+        <form method="post" action="{{ url_for('rate') }}">
+            <input type="hidden" name="image_id" value="{{ image }}">
+            
+            <div class="rating-buttons">
+                <button type="submit" name="rating" value="hot" class="hot-button">HOT</button>
+                <button type="submit" name="rating" value="not" class="not-button">NOT</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
