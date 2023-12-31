@@ -49,9 +49,13 @@ def rate():
     current_image_index += 1
 
     if current_image_index >= len(image_files):
-        return "Thanks for Rating!"
+        return redirect(url_for('rate_page'))
 
     return redirect(url_for('index'))
+
+@app.route('/rate_page')
+def rate_page():
+    return render_template('rate.html')
 
 @app.route('/download-ratings')
 def download_ratings():
